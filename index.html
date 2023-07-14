@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple image responsive</title>
+    <style>
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        .row{
+            height: 400px;
+            display: flex;
+            gap: 5px;
+            margin-bottom: 5px;
+        }
+        .row div{
+            flex: 1;
+        }
+        .vartical-collapse img{
+            height:calc((100% - 5px)/2);
+        }
+        .squeare-collapse{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5px;
+        }
+        @media screen and (max-width:576px) {
+            .row{
+                flex-direction: column;
+                height: auto;
+            }
+            .squeare-collapse{
+            grid-template-columns: repeat(1, 1fr);
+        }
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="row">
+            <img src="images/A.jpg" alt="">
+        </div>
+        <div class="row">
+            <div>
+                <img src="images/B.jpg" alt="">
+            </div>
+            <div>
+                <img src="images/C.jpg" alt="">
+            </div>
+            <div class="vartical-collapse">
+                <img src="images/d.jpg" alt="">
+                <img src="images/e.jpg" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <img src="images/F.jpg" alt="">
+            </div>
+            <div class="squeare-collapse">
+                <img src="images/g.jpg" alt="">
+                <img src="images/g.jpg" alt="">
+                <img src="images/g.jpg" alt="">
+                <img src="images/g.jpg" alt="">
+            </div>
+            <div>
+                <img src="images/h.jpg" alt="">
+            </div>
+        </div>
+    </section>
+</body>
+</html>
